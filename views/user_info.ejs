@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="user_info_container">
+      <div class="user_name"><%= name %></div>
+      <div class="user_id">id:<%= id %></div>
+      <div class="user_email"><%= email %></div>
+      <a href="/logout" class="logout_btn">登出</a>
+    </div>
+
+    <script>
+      // reference https://stackoverflow.com/questions/7131909/facebook-callback-appends-to-return-url
+      if (window.location.href.indexOf('#_=_') > 0) {
+        window.location = window.location.href.replace(/#.*/, '');
+      }
+    </script>
+
+  </body>
+</html>
